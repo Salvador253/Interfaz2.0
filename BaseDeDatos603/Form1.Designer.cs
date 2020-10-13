@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewGroup listViewGroup1 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
-            System.Windows.Forms.ListViewGroup listViewGroup2 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
-            System.Windows.Forms.ListViewGroup listViewGroup3 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
-            System.Windows.Forms.ListViewGroup listViewGroup4 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewGroup listViewGroup9 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewGroup listViewGroup10 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewGroup listViewGroup11 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewGroup listViewGroup12 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -136,19 +136,19 @@
             this.FNAME,
             this.columnHeader2,
             this.columnHeader3});
-            listViewGroup1.Header = "ListViewGroup";
-            listViewGroup1.Name = "ID";
-            listViewGroup2.Header = "ListViewGroup";
-            listViewGroup2.Name = "F. name";
-            listViewGroup3.Header = "ListViewGroup";
-            listViewGroup3.Name = "Last Name";
-            listViewGroup4.Header = "ListViewGroup";
-            listViewGroup4.Name = "Address";
+            listViewGroup9.Header = "ListViewGroup";
+            listViewGroup9.Name = "ID";
+            listViewGroup10.Header = "ListViewGroup";
+            listViewGroup10.Name = "F. name";
+            listViewGroup11.Header = "ListViewGroup";
+            listViewGroup11.Name = "Last Name";
+            listViewGroup12.Header = "ListViewGroup";
+            listViewGroup12.Name = "Address";
             this.listView1.Groups.AddRange(new System.Windows.Forms.ListViewGroup[] {
-            listViewGroup1,
-            listViewGroup2,
-            listViewGroup3,
-            listViewGroup4});
+            listViewGroup9,
+            listViewGroup10,
+            listViewGroup11,
+            listViewGroup12});
             this.listView1.HideSelection = false;
             this.listView1.Location = new System.Drawing.Point(32, 71);
             this.listView1.Name = "listView1";
@@ -195,6 +195,7 @@
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(88, 20);
             this.textBox4.TabIndex = 11;
+            this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // label4
             // 
@@ -215,6 +216,7 @@
             this.button4.TabIndex = 13;
             this.button4.Text = "MODIFICAR";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button5
             // 
@@ -225,6 +227,7 @@
             this.button5.TabIndex = 14;
             this.button5.Text = "BORRAR";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // Form1
             // 

@@ -20,8 +20,8 @@ namespace BaseDeDatos603
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            string connection = "datasource=localhost;port=3306;username=root;password=;database=sofia";
-            string query = "SELECT * FROM user";
+            string connection = "datasource=localhost;port=3306;username=root;password=;database=prueba1";
+            string query = "SELECT * FROM datos";
             MySqlConnection conectionDatabase = new MySqlConnection(connection);
             MySqlCommand databaseCommand = new MySqlCommand(query, conectionDatabase);
             databaseCommand.CommandTimeout = 60;
@@ -57,8 +57,8 @@ namespace BaseDeDatos603
         } 
         private void GuardarUsuario()
         {
-            string connection = "datasource=localhost;port=3306;username=root;password=;database=sofia";
-            string query = "INSERT INTO user(`id`, `first_name`, `last_name`, `address`) VALUES (NULL, '" + textBox1.Text + "', '" + textBox3.Text + "', '" + textBox2.Text + "')";
+            string connection = "datasource=localhost;port=3306;username=root;password=;database=prueba1";
+            string query = "INSERT INTO datos(`id`, `apellido`, `nombre`, `correo`) VALUES (NULL, '" + textBox1.Text + "', '" + textBox3.Text + "', '" + textBox2.Text + "')";
             MySqlConnection conectionDatabase = new MySqlConnection(connection);
             MySqlCommand databaseCommand = new MySqlCommand(query, conectionDatabase);
             databaseCommand.CommandTimeout = 60;
@@ -79,8 +79,8 @@ namespace BaseDeDatos603
         }
         private void MostrarUsuario()
         {
-            string Connect = "datasource=localhost;port=3306;username=root;password=;database=sofia;";
-            string query = "SELECT * FROM user";
+            string Connect = "datasource=localhost;port=3306;username=root;password=;database=prueba1;";
+            string query = "SELECT * FROM datos";
             MySqlConnection databaseConnection = new MySqlConnection(Connect);
             MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection);
             commandDatabase.CommandTimeout = 60;
@@ -113,7 +113,45 @@ namespace BaseDeDatos603
             }
 
         }
-        private void label1_Click(object sender, EventArgs e)
+
+        private void buscar()
+        {
+            string Connect = "datasource=localhost;port=3306;username=root;password=;database=prueba1;";
+            string query = "SELECT * FROM datos where id= '" + textBox4.Text + "'";
+            MySqlConnection databaseConnection = new MySqlConnection(Connect);
+            MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection);
+            commandDatabase.CommandTimeout = 60;
+            MySqlDataReader reader;
+
+            try
+            {
+                databaseConnection.Open();
+                reader = commandDatabase.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    listView1.Items.Clear();
+                    while (reader.Read())
+                    {
+                        string[] row = { reader.GetString(0), reader.GetString(1), reader.GetString(2), reader.GetString(3) };
+                        // var ListViewItems = new ListViewItems(row);
+                        textBox1.Text = row[1];
+                        textBox2.Text = row[2];
+                        textBox3.Text = row[3];
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("No se encontro nada");
+                }
+                databaseConnection.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+    private void label1_Click(object sender, EventArgs e)
         {
 
         }
@@ -170,6 +208,22 @@ namespace BaseDeDatos603
         }
 
         private void button3_Click(object sender, EventArgs e)
+        {
+            buscar();
+            MostrarUsuario();
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
         {
 
         }
