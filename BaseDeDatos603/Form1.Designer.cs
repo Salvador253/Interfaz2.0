@@ -165,17 +165,17 @@
             // 
             // FNAME
             // 
-            this.FNAME.Text = "First Name";
+            this.FNAME.Text = "Nombre";
             this.FNAME.Width = 129;
             // 
             // columnHeader2
             // 
-            this.columnHeader2.Text = "Last Name";
+            this.columnHeader2.Text = "Apellido";
             this.columnHeader2.Width = 131;
             // 
             // columnHeader3
             // 
-            this.columnHeader3.Text = "Address";
+            this.columnHeader3.Text = "Correo";
             this.columnHeader3.Width = 210;
             // 
             // button3
@@ -187,6 +187,7 @@
             this.button3.TabIndex = 10;
             this.button3.Text = "Buscar";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // textBox4
             // 
@@ -245,7 +246,7 @@
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox1);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Basede datos-Datos";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
