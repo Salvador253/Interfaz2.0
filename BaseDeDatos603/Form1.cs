@@ -113,7 +113,7 @@ namespace BaseDeDatos603
             }
 
         }
-        private void buscar()
+        private void Buscar()
         {
             string Connect = "datasource=localhost;port=3306;username=root;password=;database=prueba1;";
             string query = "SELECT * FROM datos where id= '" + textBox4.Text + "'";
@@ -163,13 +163,36 @@ namespace BaseDeDatos603
             {
                 databaseConnection.Open();
                 MySqlDataReader myRead = commandDatabase.ExecuteReader();
-                MessageBox.Show("DATO ACTIALIZADO");
+                MessageBox.Show("Dato Actualizado");
                 databaseConnection.Close();
                 textBox1.Text = "";
                 textBox2.Text = "";
                 textBox3.Text = "";
             }
 
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void borrardato()
+        {
+            string Connect = "datasource=localhost;port=3306;username=root;password=;database=prueba1;";
+            string query = "DELETE FROM datos WHERE id= '" + textBox4.Text + "'";
+            MySqlConnection databaseConnection = new MySqlConnection(Connect);
+            MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection);
+            commandDatabase.CommandTimeout = 60;
+            try
+            {
+                databaseConnection.Open();
+                MySqlDataReader myRead = commandDatabase.ExecuteReader();
+                MessageBox.Show("DATO BORRADO");
+                databaseConnection.Close();
+                textBox1.Text = "";
+                textBox2.Text = "";
+                textBox3.Text = "";
+            }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
@@ -235,7 +258,7 @@ namespace BaseDeDatos603
 
         private void button3_Click(object sender, EventArgs e)
         {
-            buscar();
+            Buscar();
             MostrarUsuario();
         }
 
@@ -247,13 +270,14 @@ namespace BaseDeDatos603
         private void button4_Click(object sender, EventArgs e)
         {//Modoficar
             modificardato();
-
+            MostrarUsuario();
 
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-
+            borrardato();
+            MostrarUsuario();
         }
     }
 }
