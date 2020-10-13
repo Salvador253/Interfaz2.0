@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewGroup listViewGroup9 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
-            System.Windows.Forms.ListViewGroup listViewGroup10 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
-            System.Windows.Forms.ListViewGroup listViewGroup11 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
-            System.Windows.Forms.ListViewGroup listViewGroup12 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewGroup listViewGroup5 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewGroup listViewGroup6 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewGroup listViewGroup7 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewGroup listViewGroup8 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -62,7 +62,7 @@
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(283, 34);
+            this.textBox3.Location = new System.Drawing.Point(488, 34);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(216, 20);
             this.textBox3.TabIndex = 2;
@@ -70,7 +70,7 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(538, 34);
+            this.textBox2.Location = new System.Drawing.Point(266, 34);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(216, 20);
             this.textBox2.TabIndex = 3;
@@ -136,21 +136,21 @@
             this.FNAME,
             this.columnHeader2,
             this.columnHeader3});
-            listViewGroup9.Header = "ListViewGroup";
-            listViewGroup9.Name = "ID";
-            listViewGroup10.Header = "ListViewGroup";
-            listViewGroup10.Name = "F. name";
-            listViewGroup11.Header = "ListViewGroup";
-            listViewGroup11.Name = "Last Name";
-            listViewGroup12.Header = "ListViewGroup";
-            listViewGroup12.Name = "Address";
+            listViewGroup5.Header = "ListViewGroup";
+            listViewGroup5.Name = "ID";
+            listViewGroup6.Header = "ListViewGroup";
+            listViewGroup6.Name = "F. name";
+            listViewGroup7.Header = "ListViewGroup";
+            listViewGroup7.Name = "Last Name";
+            listViewGroup8.Header = "ListViewGroup";
+            listViewGroup8.Name = "Address";
             this.listView1.Groups.AddRange(new System.Windows.Forms.ListViewGroup[] {
-            listViewGroup9,
-            listViewGroup10,
-            listViewGroup11,
-            listViewGroup12});
+            listViewGroup5,
+            listViewGroup6,
+            listViewGroup7,
+            listViewGroup8});
             this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(32, 71);
+            this.listView1.Location = new System.Drawing.Point(12, 71);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(592, 262);
             this.listView1.TabIndex = 9;

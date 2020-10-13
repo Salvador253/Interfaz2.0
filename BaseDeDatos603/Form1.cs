@@ -54,7 +54,7 @@ namespace BaseDeDatos603
             {
                 MessageBox.Show(ex.Message);
             }
-        } 
+        }
         private void GuardarUsuario()
         {
             string connection = "datasource=localhost;port=3306;username=root;password=;database=prueba1";
@@ -62,7 +62,7 @@ namespace BaseDeDatos603
             MySqlConnection conectionDatabase = new MySqlConnection(connection);
             MySqlCommand databaseCommand = new MySqlCommand(query, conectionDatabase);
             databaseCommand.CommandTimeout = 60;
-            
+
             try
             {
                 conectionDatabase.Open();
@@ -113,7 +113,6 @@ namespace BaseDeDatos603
             }
 
         }
-
         private void buscar()
         {
             string Connect = "datasource=localhost;port=3306;username=root;password=;database=prueba1;";
@@ -149,9 +148,36 @@ namespace BaseDeDatos603
             {
                 MessageBox.Show(ex.Message);
             }
-        }
 
-    private void label1_Click(object sender, EventArgs e)
+        }
+        private void modificardato()
+        {
+            string Connect = "datasource=localhost;port=3306;username=root;password=;database=prueba1;";
+            string query = "UPDATE `datos` SET `apellido`='" + textBox1.Text + "',`nombre`='" + textBox2.Text + "',`correo`='" + textBox3.Text + "' WHERE id = '" + textBox4.Text + "' ";
+            MySqlConnection databaseConnection = new MySqlConnection(Connect);
+            MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection);
+            commandDatabase.CommandTimeout = 60;
+
+
+            try
+            {
+                databaseConnection.Open();
+                MySqlDataReader myRead = commandDatabase.ExecuteReader();
+                MessageBox.Show("DATO ACTIALIZADO");
+                databaseConnection.Close();
+                textBox1.Text = "";
+                textBox2.Text = "";
+                textBox3.Text = "";
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+    
+
+                private void label1_Click(object sender, EventArgs e)
         {
 
         }
@@ -219,7 +245,9 @@ namespace BaseDeDatos603
         }
 
         private void button4_Click(object sender, EventArgs e)
-        {
+        {//Modoficar
+            modificardato();
+
 
         }
 
