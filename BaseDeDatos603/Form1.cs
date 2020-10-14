@@ -192,6 +192,7 @@ namespace BaseDeDatos603
                 textBox1.Text = "";
                 textBox2.Text = "";
                 textBox3.Text = "";
+                textBox4.Text = "";
             }
             catch (Exception ex)
             {
@@ -232,7 +233,7 @@ namespace BaseDeDatos603
                 textBox1.Text = "";
                 textBox2.Text = "";
                 textBox3.Text = "";
-
+                textBox4.Text = "";
             }
         }
 
