@@ -67,7 +67,7 @@ namespace BaseDeDatos603
             {
                 conectionDatabase.Open();
                 MySqlDataReader reader1 = databaseCommand.ExecuteReader();
-                MessageBox.Show("Lograste Guardar el dato, eres un Crack");
+                MessageBox.Show("Registro exitoso");
                 conectionDatabase.Close();
             }
             catch (Exception ex)
@@ -140,7 +140,7 @@ namespace BaseDeDatos603
                 }
                 else
                 {
-                    Console.WriteLine("No se encontro nada");
+                    Console.WriteLine("Ningun registro coincide");
                 }
                 databaseConnection.Close();
             }
@@ -150,7 +150,7 @@ namespace BaseDeDatos603
             }
 
         }
-        private void modificardato()
+        private void ModificarDato()
         {
             string Connect = "datasource=localhost;port=3306;username=root;password=;database=prueba1;";
             string query = "UPDATE `datos` SET `apellido`='" + textBox1.Text + "',`nombre`='" + textBox2.Text + "',`correo`='" + textBox3.Text + "' WHERE id = '" + textBox4.Text + "' ";
@@ -163,7 +163,7 @@ namespace BaseDeDatos603
             {
                 databaseConnection.Open();
                 MySqlDataReader myRead = commandDatabase.ExecuteReader();
-                MessageBox.Show("Dato Actualizado");
+                MessageBox.Show("Registro Modificado");
                 databaseConnection.Close();
                 textBox1.Text = "";
                 textBox2.Text = "";
@@ -176,7 +176,7 @@ namespace BaseDeDatos603
             }
         }
 
-        private void borrardato()
+        private void BorrarDato()
         {
             string Connect = "datasource=localhost;port=3306;username=root;password=;database=prueba1;";
             string query = "DELETE FROM datos WHERE id= '" + textBox4.Text + "'";
@@ -187,7 +187,7 @@ namespace BaseDeDatos603
             {
                 databaseConnection.Open();
                 MySqlDataReader myRead = commandDatabase.ExecuteReader();
-                MessageBox.Show("DATO BORRADO");
+                MessageBox.Show("El registro ha sido eliminado permanentemente.");
                 databaseConnection.Close();
                 textBox1.Text = "";
                 textBox2.Text = "";
@@ -218,11 +218,11 @@ namespace BaseDeDatos603
             }
             else if (textBox2.Text == "")
             {
-                MessageBox.Show("No tienes direccion");
+                MessageBox.Show("No tienes Apellido");
             }
             else if (textBox3.Text == "")
             {
-                MessageBox.Show("No pusiste apellido bro");
+                MessageBox.Show("No pusiste correo");
             }
             else
             {
@@ -269,15 +269,39 @@ namespace BaseDeDatos603
 
         private void button4_Click(object sender, EventArgs e)
         {//Modoficar
-            modificardato();
-            MostrarUsuario();
+            if (textBox1.Text == "")
+            {
+                MessageBox.Show("No puede haber registros vacios");
+            }
+            else if (textBox2.Text == "")
+            {
+                MessageBox.Show("No puede haber registros vacios");
+            }
+            else if (textBox3.Text == "")
+            {
+                MessageBox.Show("No puede haber registros vacios");
+            }
+            else
+            {
 
+                ModificarDato();
+                MostrarUsuario();
+                textBox1.Text = "";
+                textBox2.Text = "";
+                textBox3.Text = "";
+                textBox4.Text = "";
+            }
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            borrardato();
+            BorrarDato();
             MostrarUsuario();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
