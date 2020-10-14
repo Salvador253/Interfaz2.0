@@ -261,6 +261,10 @@ namespace BaseDeDatos603
         {
             Buscar();
             MostrarUsuario();
+            textBox1.Text = "";
+            textBox2.Text = "";
+            textBox3.Text = "";
+            textBox4.Text = "";
         }
 
         private void textBox4_TextChanged(object sender, EventArgs e)
